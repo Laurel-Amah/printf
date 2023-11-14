@@ -30,6 +30,8 @@ int _printf(const char *format, ...)
 				case 's':
 					count += fprintf(stdout, "%s", va_arg(args, char *));
 					break;
+				case '%':
+					count += fprintf(stdout, "%%", va_arg(args, int));
 			}
 		}
 		format++;
